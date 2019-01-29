@@ -1,16 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hjj
-  Date: 2019/1/25
-  Time: 17:07
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.imocc.vegetable.uitls.Ulog" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>菜品管理系统</title>
+</head>
+<frameset rows="20%,*">
+  <frame src="top.jsp"></frame>
+  <frameset cols="10%,*">
+    <frame src="left.jsp"></frame>
+    <frame name="main"></frame>
+  </frameset>
+</frameset>
 </html>

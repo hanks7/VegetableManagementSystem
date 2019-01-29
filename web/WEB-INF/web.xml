@@ -3,4 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <!--欢迎页面,哪个存在就优先显示哪个,就算在二级目录也能给你找出来,不知配置,就是 根目录/index.html-->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>InitServlet</servlet-name>
+        <servlet-class>com.imocc.vegetable.InitServlet</servlet-class>
+        <load-on-startup>2</load-on-startup><!--"2" 表示从服务开始仅次于欢迎页启动-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitServlet</servlet-name>
+        <url-pattern>/InitServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
