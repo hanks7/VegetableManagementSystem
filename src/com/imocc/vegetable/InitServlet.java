@@ -22,8 +22,8 @@ public class InitServlet extends HttpServlet {
         List<Food> list = new ArrayList<>();
         getServletContext().setAttribute("list",list);
         Ulog.i("菜品后台系统服务开始了");
-        list.add(new Food("1","111","11","53413a31a4e14b42bcef7e8cb663e843.jpg","11","1111"));
-        list.add(new Food("2","2222","222222","2003456288fa4c5dbee54e2eb2061799.bmp","22222","22"));
+        list.add(new Food("1","111","微辣","53413a31a4e14b42bcef7e8cb663e843.jpg","11","1111"));
+        list.add(new Food("2","2222","麻辣","2003456288fa4c5dbee54e2eb2061799.bmp","22222","22"));
 
     }
 }
