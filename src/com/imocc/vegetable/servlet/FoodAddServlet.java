@@ -46,12 +46,12 @@ public class FoodAddServlet extends HttpServlet {
             List<Food> foodList = (List<Food>) this.getServletContext().getAttribute("list");
             Food bean = new Food();
 
-            bean.setDescription(map.get("username"));
             bean.setId(map.get("id"));
             bean.setFoodName(map.get("foodName"));
             bean.setTaste(map.get("taste"));
             bean.setFoodImage(url);
-            bean.setFoodName(map.get("foodName"));
+            bean.setPrice(map.get("price"));
+            bean.setDescription(map.get("description"));
 
             foodList.add(bean);
             getServletContext().setAttribute("list", foodList);
@@ -66,6 +66,7 @@ public class FoodAddServlet extends HttpServlet {
 
     /**
      * 处理文件上传
+     *
      * @param url
      * @param fileItem
      * @return
@@ -76,9 +77,10 @@ public class FoodAddServlet extends HttpServlet {
         // 文件上传功能：
         // 获得文件上传的名称：
         String fileName = fileItem.getName();
+        String uuidFileName="";
         if (fileName != null && !"".equals(fileName)) {
             // 通过工具类获得唯一文件名:
-            String uuidFileName = UploadUtils.getUUIDFileName(fileName);
+            uuidFileName = UploadUtils.getUUIDFileName(fileName);
             // 获得文件上传的数据：
             InputStream is = fileItem.getInputStream();
             // 获得文件上传的路径:
@@ -88,8 +90,9 @@ public class FoodAddServlet extends HttpServlet {
 
             // 将输入流对接到输出流就可以了:
             url = path + "\\" + uuidFileName;
+            Ulog.i("url", url);
             OutputStream os = new FileOutputStream(url);
-            int len = 0;
+            int len ;
             byte[] b = new byte[1024];
             while ((len = is.read(b)) != -1) {
                 os.write(b, 0, len);
@@ -97,7 +100,8 @@ public class FoodAddServlet extends HttpServlet {
             is.close();
             os.close();
         }
-        return url;
+
+        return uuidFileName;
     }
 
     /**

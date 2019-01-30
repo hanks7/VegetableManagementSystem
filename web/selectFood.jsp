@@ -18,8 +18,8 @@
 </head>
 <body>
 	<center>
-		<p><a href="">查询所有菜品信息</a></p>
-		<p><a href="">菜名查询</a></p>
+		<p><a href="<%=basePath%>/showFoodList.jsp">查询所有菜品信息</a></p>
+		<p><a href="<%=basePath%>/selectFoodByName.jsp">菜名查询</a></p>
 	</center>
 </body>
 </html>

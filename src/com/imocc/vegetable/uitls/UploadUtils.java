@@ -21,6 +21,7 @@ public class UploadUtils {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(getUUIDFileName("1.jpg"));
+
+        System.out.println(getUUIDFileName("E:\\doc_work\\intellijIdea\\VegetableManagementSystem\\out\\artifacts\\VegetableManagementSystem_war_exploded\\upload\\e9703f2b07e54c93808e43ad91f9a6a9.bmp"));
 	}
 }
