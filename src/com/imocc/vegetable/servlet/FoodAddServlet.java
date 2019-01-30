@@ -16,12 +16,14 @@ import java.util.List;
 public class FoodAddServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         AddFoodHelp help = new AddFoodHelp(request, response);
         Food bean = help.getData(help.getFileItems());
         List<Food> foodList = (List<Food>) request.getServletContext().getAttribute("list");
         foodList.add(bean);
         request.getServletContext().setAttribute("list", foodList);
         request.getRequestDispatcher("showFoodList.jsp").forward(request, response);
+
     }
 
 
